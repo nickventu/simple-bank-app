@@ -1,7 +1,6 @@
 from pydantic import BaseModel
 
 class AccountCreate(BaseModel):
-    userId: int
     accountType: str
 
 class AccountResponse(BaseModel):

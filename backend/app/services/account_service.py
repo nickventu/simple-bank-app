@@ -1,4 +1,5 @@
 from sqlalchemy.orm import Session
+from decimal import Decimal
 from app.models.account import Account
 from app.models.transaction import Transaction
 
@@ -17,6 +18,7 @@ def get_account(db: Session, account_id: int):
         return account
 
 def deposit(db: Session, account_id: int, amount: float):
+    amount = Decimal(str(amount))
     if amount <= 0:
         raise ValueError("Amount must be a positive number")
     account = get_account(db, account_id)
@@ -29,6 +31,7 @@ def deposit(db: Session, account_id: int, amount: float):
 
 
 def withdraw(db: Session, account_id: int, amount: float):
+    amount = Decimal(str(amount))
     if amount <= 0:
         raise ValueError("Amount must be a positive number")
     account = get_account(db, account_id)
