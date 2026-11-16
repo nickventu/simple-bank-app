@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import { apiFetch } from "../api";
 
 function TransactionHistory() {
   const { id } = useParams();
@@ -14,7 +15,7 @@ function TransactionHistory() {
       setLoading(true);
       setError(null);
       try {
-        const res = await fetch(`/api/accounts/${id}/transactions`);
+        const res = await apiFetch(`/api/accounts/${id}/transactions`);
         if (!res.ok) throw new Error(`Request failed: ${res.status}`);
         const data = await res.json();
         if (!cancelled) setTransactions(data);
@@ -45,7 +46,7 @@ function TransactionHistory() {
           {transactions.map((txn, i) => (
             <li key={i}>
               {txn.type} — ${txn.amount} —{" "}
-              {new Date(txn.transaction_date).toLocaleString()}
+              {new Date(txn.transaction_date).toLocaleDateString()}
             </li>
           ))}
         </ul>

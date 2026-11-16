@@ -5,6 +5,7 @@ import AccountDetails from "./pages/AccountDetails";
 import Deposit from "./pages/Deposit";
 import Withdraw from "./pages/Withdraw";
 import TransactionHistory from "./pages/TransactionHistory";
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/accounts/:id/deposit" element={<Deposit />} />
         <Route path="/accounts/:id/withdraw" element={<Withdraw />} />
         <Route path="/accounts/:id/transactions" element={<TransactionHistory />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   );

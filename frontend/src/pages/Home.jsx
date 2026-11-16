@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+
 function Home() {
   const [accountId, setAccountId] = useState("");
   const navigate = useNavigate();
@@ -14,8 +15,8 @@ function Home() {
   return (
     <div>
       <h1>Bank App</h1>
-      <Link to="/create-account">Create Account</Link>
-
+        <div><Link to="/create-account">Create Account</Link></div>
+        <div><Link to="/login">Login</Link></div>
       <form onSubmit={handleLookup}>
         <label htmlFor="accountId">Go to account</label>
         <input

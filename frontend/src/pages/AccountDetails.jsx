@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import { apiFetch } from "../api";
 
 function AccountDetails() {
   const { id } = useParams();
@@ -14,7 +15,7 @@ function AccountDetails() {
       setLoading(true);
       setError(null);
       try {
-        const res = await fetch(`/api/accounts/${id}`);
+        const res = await apiFetch(`/api/accounts/${id}`);
         if (!res.ok) throw new Error(`Request failed: ${res.status}`);
         const data = await res.json();
         if (!cancelled) setAccount(data);

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
+import { apiFetch } from "../api";
 
 function Deposit() {
   const { id } = useParams();
@@ -14,7 +15,7 @@ function Deposit() {
     setError(null);
 
     try {
-      const res = await fetch(`/api/accounts/${id}/deposit`, {
+      const res = await apiFetch(`/api/accounts/${id}/deposit`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ amount: Number(amount) }),
