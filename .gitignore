@@ -1,7 +1,14 @@
-   backend/venv/
-   backend/__pycache__/
-   backend/**/__pycache__/
-   backend/.env
-   frontend/node_modules/
-   frontend/dist/
-   .DS_Store
+backend/venv/
+backend/__pycache__/
+backend/**/__pycache__/
+backend/.env
+frontend/node_modules/
+frontend/dist/
+.DS_Store
+venv/
+.venv/
+.env
+.env.*
+!.env.example
+__pycache__/
+node_modules/
