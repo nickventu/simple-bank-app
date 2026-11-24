@@ -10,6 +10,13 @@ A full-stack banking application: users register and log in, open accounts, make
 - Create accounts, deposit, withdraw, and view transaction history
 - Input validation and clear 400/404 error responses
 
+## Screenshots
+
+![Create account](docs/create-account.png)
+![Account](docs/account.png)
+![Transaction history](docs/history.png)
+![API docs](docs/api-docs.png)
+
 ## Tech stack
 
 | Layer | Technology |
